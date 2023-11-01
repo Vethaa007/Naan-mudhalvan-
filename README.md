@@ -86,3 +86,32 @@ You can proceed with further analysis, visualization, or model development using
 For example, performing exploratory data analysis, building predictive models, or generating visualizations.
 
 Save the preprocessed data to a new CSV file if needed data.to_csv('preprocessed_air_quality_data.csv', index=False)
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+ Load the air quality dataset
+data = pd.read_csv('air_quality_data.csv')  # Replace 'air_quality_data.csv' with your dataset filename
+
+Handling missing values (if any)
+data.fillna(data.mean(), inplace=True)  # Filling missing values with the mean of each column
+
+ Feature selection and splitting the dataset into features and target variable
+X = data[['SO2', 'NO2']]  # Features: SO2 and NO2
+y = data['RSPM/PM10']     # Target variable: RSPM/PM10
+
+Splitting the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+Model fitting
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+Prediction on the test set
+y_pred = model.predict(X_test)
+
+Model evaluation
+print('Mean Squared Error:', mean_squared_error(y_test, y_pred))
+print('R-squared:', r2_score(y_test, y_pred))
