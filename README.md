@@ -34,32 +34,41 @@ Problem Identification:
 Addressing the challenges posed by air pollution in Tamil Nadu due to various factors such as industrialization, urbanization, and environmental conditions.
 
 Data Utilization:
+
  Utilizing diverse datasets containing air quality parameters, meteorological data, and geographical information to build a predictive model.
 
 Prediction and Mitigation:
+
   Developing a machine learning-based model to predict air quality levels and contributing to strategies for better environmental management and public health improvement.
 
 Methodology: Design Thinking Approach:
+
  Employing a user-centered and iterative design thinking process to empathize, define, ideate, prototype, test, implement, and iterate through the development phases.
 
 Data Preprocessing:
+
  Cleaning, handling missing values, and scaling the dataset to ensure data quality and uniformity for modeling.
 
 Exploratory Data Analysis:
+
  Analyzing data through statistics, visualizations, and correlations to understand underlying patterns and relationships between variables.
 
 Machine Learning Model Development:
+
  Selecting appropriate algorithms and developing models to predict air quality parameters based on historical and current data.
 Deliverables: Code and Model 
 
 Development:
+
  Providing Python-based scripts and programs for data preprocessing, exploratory data analysis, model development, and evaluation.
 
 Documentation:
+
  Offering detailed documentation outlining problem statements, design thinking approach, dataset description, preprocessing steps, model selection, and innovative techniques applied during the development.
 
 
 Program:
+
 import pandas as pd Load the dataset data = pd.read_csv('air_quality_data.csv')
 
 Checking for missing values missing_values = data.isnull().sum() print("Missing Values:") print(missing_values)
