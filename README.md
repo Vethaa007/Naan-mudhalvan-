@@ -118,16 +118,16 @@ print('R-squared:', r2_score(y_test, y_pred))
 
 import pandas as pd
 
-# Load the dataset
+Load the dataset
 data = pd.read_csv('your_dataset.csv')  # Replace 'your_dataset.csv' with your actual dataset file
 
-# Handling missing values
+Handling missing values
 data.fillna(method='ffill', inplace=True)  # Forward-fill missing values
 
-# Removing duplicates if any
+Removing duplicates if any
 data.drop_duplicates(inplace=True)
 
-# Outlier detection and handling (assuming RSPM/PM10, SO2, NO2 are columns)
+Outlier detection and handling (assuming RSPM/PM10, SO2, NO2 are columns)
 def remove_outliers(df, column):
     Q1 = df[column].quantile(0.25)
     Q3 = df[column].quantile(0.75)
@@ -141,7 +141,7 @@ data = remove_outliers(data, 'RSPM/PM10')
 data = remove_outliers(data, 'SO2')
 data = remove_outliers(data, 'NO2')
 
-# Format or preprocess data further if needed (e.g., date parsing, feature engineering)
+ Format or preprocess data further if needed (e.g., date parsing, feature engineering)
 
-# Save preprocessed data to a new CSV file
+Save preprocessed data to a new CSV file
 data.to_csv('preprocessed_data.csv', index=False)
